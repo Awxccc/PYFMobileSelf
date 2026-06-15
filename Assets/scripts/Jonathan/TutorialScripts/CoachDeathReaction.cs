@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
 
-public class CounsellorDeathReaction : MonoBehaviour
+public class CoachDeathReaction : MonoBehaviour
 {
     [Header("Existing game over UI")]
-    [SerializeField] private GameObject counsellorMockPanel;
-    [SerializeField] private TMP_Text counsellorMockText;
+    [SerializeField] private GameObject coachMockPanel;
+    [SerializeField] private TMP_Text coachMockText;
 
     [Header("Settings")]
     [SerializeField] private bool onlyMockOnce = true;
@@ -34,11 +34,11 @@ public class CounsellorDeathReaction : MonoBehaviour
         if (onlyMockOnce && alreadyMocked)
             return;
 
-        if (counsellorMockPanel != null)
-            counsellorMockPanel.SetActive(true);
+        if (coachMockPanel != null)
+            coachMockPanel.SetActive(true);
 
-        if (counsellorMockText != null)
-            counsellorMockText.text = GetMockLine();
+        if (coachMockText != null)
+            coachMockText.text = GetMockLine();
 
         PlayerPrefs.SetInt(CombatTutorialSkipMockShownKey, 1);
         PlayerPrefs.Save();
@@ -46,6 +46,7 @@ public class CounsellorDeathReaction : MonoBehaviour
 
     private string GetMockLine()
     {
+        // Notice the dialogue options remain intact but will now be delivered by the "Coach"
         string[] lines =
         {
             "Skipping the combat lesson and falling in battle? A daring academic choice.",

@@ -11,17 +11,18 @@ public class TutorialSceneScript : MonoBehaviour
     [Header("Scene names")]
     [SerializeField] private string tutorialSelectionSceneName = "TutorialSelectionScene";
     [SerializeField] private string tutorialCombatSceneName = "TutorialCombatV2";
-    [SerializeField] private string firstRealGameSceneName = "Combat_blockout";
+    [SerializeField] private string firstRealGameSceneName = "Selection_Scrn";
 
     [Header("Tutorial flow")]
     [SerializeField] private bool autoStartOnSceneLoad = true;
     [SerializeField] private bool loadSceneWhenTutorialEnds;
-    [SerializeField] private string sceneToLoadWhenTutorialEnds = "Combat_blockout";
+    [SerializeField] private string sceneToLoadWhenTutorialEnds = "Selection_Scrn";
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text fallbackDialogueText;
     [SerializeField] private TypewriterText typewriterText;
+
 
     [Header("Tutorial visuals")]
     [SerializeField] private TutorialPointer tutorialPointer;
@@ -71,6 +72,8 @@ public class TutorialSceneScript : MonoBehaviour
 
     private void Start()
     {
+        
+        
         if (handUI == null)
             handUI = FindAnyObjectByType<handui>();
 
@@ -120,13 +123,17 @@ public class TutorialSceneScript : MonoBehaviour
             Debug.LogWarning("TutorialSceneScript has no tutorial steps assigned.");
             return;
         }
-
         isRunning = true;
         currentStepIndex = 0;
         currentDialogueLineIndex = 0;
 
         if (dialoguePanel != null)
+        {
+            
             dialoguePanel.SetActive(true);
+        }
+
+            
 
         ShowCurrentStep();
     }
@@ -244,26 +251,18 @@ public class TutorialSceneScript : MonoBehaviour
 
     public void SkipTutorial()
     {
-        if (IsSelectionTutorialScene())
-        {
-            PlayerPrefs.SetInt(SelectionTutorialSkippedKey, 1);
-            PlayerPrefs.SetInt(SelectionTutorialCompletedKey, 0);
-            PlayerPrefs.Save();
-            LoadSceneIfNameExists(tutorialCombatSceneName);
-            return;
-        }
-
-        if (IsCombatTutorialScene())
-        {
-            PlayerPrefs.SetInt(CombatTutorialSkippedKey, 1);
-            PlayerPrefs.SetInt(CombatTutorialCompletedKey, 0);
-            PlayerPrefs.SetInt(CombatTutorialSkipMockShownKey, 0);
-            PlayerPrefs.Save();
-            LoadSceneIfNameExists(firstRealGameSceneName);
-            return;
-        }
+        PlayerPrefs.SetInt(SelectionTutorialSkippedKey, 1);
+        PlayerPrefs.SetInt(SelectionTutorialCompletedKey, 0);
+        
+        PlayerPrefs.SetInt(CombatTutorialSkippedKey, 1);
+        PlayerPrefs.SetInt(CombatTutorialCompletedKey, 0);
+        PlayerPrefs.SetInt(CombatTutorialSkipMockShownKey, 0);
+        
+        PlayerPrefs.Save();
 
         HideTutorialUI();
+
+        LoadSceneIfNameExists(firstRealGameSceneName);
     }
 
     public void ReportAction(TutorialAction action)
@@ -495,7 +494,6 @@ public class TutorialSceneScript : MonoBehaviour
 
         if (darkOverlayObject != null)
             darkOverlayObject.SetActive(false);
-
         HideAllOptionalHighlightObjects();
     }
 

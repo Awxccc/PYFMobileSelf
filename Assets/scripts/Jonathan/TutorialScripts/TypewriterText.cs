@@ -45,7 +45,7 @@ public class TypewriterText : MonoBehaviour
         if (textBox != null)
             textBox.text = fullText;
     }
-
+    
     public void FinishImmediately()
     {
         if (!isTyping)

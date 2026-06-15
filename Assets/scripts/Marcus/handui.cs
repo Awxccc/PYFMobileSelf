@@ -400,6 +400,8 @@ public class handui : MonoBehaviour
         if (selected_card.ref_hat.type == hat_type.Transferable) //Selecting cards
         {
             typeOfCardUsed = 1;
+            tutorialSceneScript.ReportAction(TutorialAction.SelectAttackCard);
+            tutorialSceneScript.ReportAction(TutorialAction.SelectEnemyTarget);
             //If card is a damaging card then target icon enabled for enemy, disabled for player
             if (Player_data.instance.targetIcon != null) if (Player_data.instance.targetIcon.activeSelf) Player_data.instance.targetIcon.SetActive(false);
             if (Player_data.instance.current_target != null) combat_mgr.currentTargetIcon.SetActive(true);
@@ -407,6 +409,8 @@ public class handui : MonoBehaviour
         else
         {
             typeOfCardUsed = 2;
+            tutorialSceneScript.ReportAction(TutorialAction.SelectBuffCard);
+            tutorialSceneScript.ReportAction (TutorialAction.SelectPlayerTarget);
             //If card is a buffing card then target icon enabled for player, disabled for enemy
             if (combat_mgr.currentTargetIcon != null) if (combat_mgr.currentTargetIcon.activeSelf) combat_mgr.currentTargetIcon.SetActive(false);
             Player_data.instance.targetIcon.SetActive(true);

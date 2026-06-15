@@ -6,7 +6,7 @@ public class TutorialCutoutBlocker : Graphic, ICanvasRaycastFilter
     [SerializeField] private RectTransform overlayRoot;
 
     [SerializeField] private RectTransform target;
-    [SerializeField] private float padding = 0f;
+    [SerializeField] private float padding = 10f;
 
     private bool hasHole;
     private bool blockClicksInsideHole;

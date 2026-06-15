@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bb362b06ff0f041ac7444d1c9caa11, type: 3}
+  m_Name: test_hat_2
+  m_EditorClassIdentifier: 
+  hat_info:
+    icon: {fileID: 21300000, guid: 42a050322e713a04c8b18fa86997b6ed, type: 3}
+    name: test_hat_2
+    type: 1
+    level: 0
+    description: <pow>  <sprite=31>
+    pow: 5
+    pow_mod: 0
+    cost: 2
+    use_effects: []
+    upgraded_pow: -1
+    upgraded_cost: -1
+    upgraded_use_effects: []

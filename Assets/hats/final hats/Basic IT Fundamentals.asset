@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bb362b06ff0f041ac7444d1c9caa11, type: 3}
+  m_Name: Basic IT Fundamentals
+  m_EditorClassIdentifier: 
+  hat_info:
+    icon: {fileID: -935591339, guid: 1ae96135d769fa64ba64100c5f65e7b6, type: 3}
+    name: 'Basic IT Fundamentals '
+    type: 0
+    level: 0
+    exhaust: 0
+    retain: 0
+    hat_model: {fileID: 6529879613539908766, guid: 086a5ccae1684ff4d8610ae589d72bda, type: 3}
+    description:
+    - effect_string: <pow>
+      effect_icon: {fileID: -1880049721, guid: 18a46098aeb1a764aa3d5b4e1300ca30, type: 3}
+      middle: 0
+      colored: 0
+    detailed_description: Deal <pow> dmg
+    pow: 2
+    pow_mod: 0
+    cost: 0
+    use_effects: []
+    upgraded_pow: 3
+    upgraded_cost: -1
+    upgraded_description: []
+    upgraded_detailed_description: 
+    upgraded_use_effects: []

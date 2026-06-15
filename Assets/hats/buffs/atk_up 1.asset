@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225be2f93326a87478ea1da17410c6a4, type: 3}
+  m_Name: atk_up 1
+  m_EditorClassIdentifier: 
+  pow: 1
+  selftarget: 1
+  buff_name: Atk buff
+  buff_description: deal <pow> damage
+  buff_icon: {fileID: 1980346116, guid: 18a46098aeb1a764aa3d5b4e1300ca30, type: 3}
+  buff_vfx: {fileID: 0}
+  duration: 1
+  type: 0
+  negative_icon: {fileID: -1382327263, guid: 18a46098aeb1a764aa3d5b4e1300ca30, type: 3}
+  stat_type: 0

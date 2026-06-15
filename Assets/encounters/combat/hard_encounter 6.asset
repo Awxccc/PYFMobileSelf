@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d3429c14a030c40976805d80100c20, type: 3}
+  m_Name: hard_encounter 6
+  m_EditorClassIdentifier: 
+  scene_name: test3
+  scene_gacha_rate: 6
+  scene_description: You ignored some distractions and did well for your presentation.
+  override_scene: 0
+  override_scene_name: 
+  enemies_for_spawning:
+  - {fileID: 3883026225411826660, guid: 3b4b69aef26fdfe4f899ec04cd17190f, type: 3}
+  - {fileID: 3883026225411826660, guid: 4ce1f7b8ff826044886db22ff887e3dc, type: 3}
+  event_scene_prefab: {fileID: 0}

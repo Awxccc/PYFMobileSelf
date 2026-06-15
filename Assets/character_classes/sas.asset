@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a33f965dabbadb4a880d060d830e9ba, type: 3}
+  m_Name: sas
+  m_EditorClassIdentifier: 
+  max_health: 11
+  max_energy: 5
+  handsize: 6
+  option_name: Humility
+  option_desc: SAS
+  ui_color: {r: 0.09019607, g: 1, b: 0.84513694, a: 0.1764706}
+  textures:
+  - {fileID: 2800000, guid: 0c60899fc333a774899d63afed2a0419, type: 3}
+  - {fileID: 2800000, guid: 2420e7b8830bc464ca4a5d9813b43d84, type: 3}
+  - {fileID: 2800000, guid: 1a588f408096c75489f7af64b899f1c6, type: 3}
+  starting_hats:
+  - {fileID: 11400000, guid: 146ff580487ec3744bd8c0ceabd6bc61, type: 2}
+  - {fileID: 11400000, guid: b178dd7eae89f5441ae7841bb9e7b1d3, type: 2}
+  - {fileID: 11400000, guid: eb6b0db066afb1b41a624ea078b2094b, type: 2}

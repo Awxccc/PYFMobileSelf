@@ -10,8 +10,6 @@ public class SceneTransitioner : MonoBehaviour
 {
     public static SceneTransitioner Instance { get; private set; }
 
-    private Animator animator;
-
     [Header("Transition Settings")]
     [SerializeField] private float fadeOutDuration = 1f;
     [SerializeField] private float fadeInDuration = 1f;
@@ -33,46 +31,23 @@ public class SceneTransitioner : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        animator = GetComponent<Animator>();
-
         
     }
 
     private void Start()
     {
-        if (fadeInOnStart)
-        {
-            StartCoroutine(FadeIn());
-        }
+
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha0)) StartCoroutine(FadeOut());
-        if (Input.GetKeyDown(KeyCode.Alpha9)) StartCoroutine(FadeIn());
-    }
-
-    public IEnumerator FadeOut()
-    {
-        animator.SetTrigger("SceneFade");
-        yield return new WaitForSeconds(fadeOutDuration + 0.5f);
-    }
-
-    public IEnumerator FadeIn()
-    {
-        animator.SetTrigger("SceneReveal");
-        yield return new WaitForSeconds(fadeInDuration);
-    }
 
     public IEnumerator FadeOutAndLoadScene(string sceneName)
     {
-        yield return FadeOut();
         SceneManager.LoadScene(sceneName);
+        yield return new WaitForSeconds(1f);
     }
 
     public IEnumerator LoadSceneAsyncWithLoadingScreen(string sceneName)
     {
-        yield return FadeOut();
 
         if (loadingScreenPanel != null)
             loadingScreenPanel.SetActive(true);
@@ -94,15 +69,17 @@ public class SceneTransitioner : MonoBehaviour
             if (operation.progress >= 0.9f)
             {
                 yield return new WaitForSeconds(0.5f);
-
+                /*
                 if (loadingScreenPanel != null)
-                    loadingScreenPanel.SetActive(false);
+                    loadingScreenPanel.SetActive(false);*/
 
                 operation.allowSceneActivation = true;
             }
-
+            loadingScreenPanel.SetActive(false);
             yield return null;
         }
-        yield return FadeIn();
+        
+        yield return new WaitForSeconds(0f);
+        
     }
 }

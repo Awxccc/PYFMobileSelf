@@ -275,7 +275,7 @@ public class LineMover : MonoBehaviour
 
     private IEnumerator FadeDisableAndLoad()
     {
-        yield return sceneTransitioner.FadeOut();
+        //yield return sceneTransitioner.FadeOut();
 
         playerSprite.enabled = false;
         line.enabled = false;

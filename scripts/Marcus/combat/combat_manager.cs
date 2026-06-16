@@ -17,7 +17,7 @@ public class combat_manager : MonoBehaviour
     /** 
     @brief counts the number of turns passed,when at 10 turns auto wins
     */
-    private int turn_counter = 0;
+    private int turn_counter = 1;
     /** 
     @brief the player's hand ui
     */
@@ -597,7 +597,7 @@ public class combat_manager : MonoBehaviour
             List<hat.hat_data> temp = Player_data.instance.gain_hat_reward(Player_data.instance.current_scene.scene_gacha_rate);
             prize_selection_panel.load_prizes(temp);
 
-            turn_counter = 0;
+            turn_counter = 1;
         }
         else
         {
@@ -619,7 +619,7 @@ public class combat_manager : MonoBehaviour
         ResetCombatSpeed();
         Player_data.instance.current_target = null;
         selectionManager.gameObject.SetActive(true);
-        turn_counter = 0;
+        turn_counter = 1;
         nextCounsellorTurn = Mathf.Max(1, counsellorTurnInterval);
         //hatPlacementPlayer.PlaceHat(temp[0]);
         foreach (var e in enemies)
@@ -651,7 +651,7 @@ public class combat_manager : MonoBehaviour
     {
         ResetCombatSpeed();
         selectionManager.gameObject.SetActive(true);
-        turn_counter = 0;
+        turn_counter = 1;
         nextCounsellorTurn = Mathf.Max(1, counsellorTurnInterval);
         //hatPlacementPlayer.PlaceHat(temp[0]);
         foreach (var e in enemies)
@@ -856,7 +856,7 @@ public class combat_manager : MonoBehaviour
     {
         if (IsBossFight())
         {
-            if (turn_counter >= bossOvertimeStartTurn)
+            if (turn_counter > bossOvertimeStartTurn)
             {
                 Player_data.instance.turnsBeforeCounselling++;
                 ApplyBossOvertimeCounsellorBuff();
@@ -867,7 +867,7 @@ public class combat_manager : MonoBehaviour
 
         if (counsellorTurnInterval <= 0) return false;
 
-        if (turn_counter >= nextCounsellorTurn)
+        if (turn_counter > nextCounsellorTurn)
         {
             Player_data.instance.turnsBeforeCounselling++;
             nextCounsellorTurn += counsellorTurnInterval;
